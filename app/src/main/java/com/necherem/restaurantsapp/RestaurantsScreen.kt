@@ -20,13 +20,16 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 
 @Composable
 fun RestaurantsScreen() {
-    LazyColumn(contentPadding = PaddingValues(
+    val viewModel: RestaurantViewModel = viewModel()
+    LazyColumn(
+        contentPadding = PaddingValues(
         vertical = 8.dp,
         horizontal = 8.dp)) {
-        items(dummyRestaurants) {
+        items(viewModel.getRestaurants()) {
             restaurant -> RestaurantItem(restaurant)
         }
     }
