@@ -4,7 +4,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 
 /*RestaurantViewModel Inherits from the ViewModel class*/
-class RestaurantViewModel (): ViewModel() {
+class RestaurantsViewModel(): ViewModel() {
     val state = mutableStateOf(dummyRestaurants)
 
     fun toggleFavorite(id: Int) {
